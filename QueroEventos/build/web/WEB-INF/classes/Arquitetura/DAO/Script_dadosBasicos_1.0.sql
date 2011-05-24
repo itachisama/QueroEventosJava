@@ -1,0 +1,30 @@
+
+/* Script para a base de dados - Versão 1.0*/
+
+/* Popular categorias de evento*/
+
+INSERT INTO TB_CATEGORIA  VALUES (null,'Música');
+INSERT INTO TB_CATEGORIA  VALUES (null,'Games');
+INSERT INTO TB_CATEGORIA  VALUES (null,'Ecoturismo');
+INSERT INTO TB_CATEGORIA  VALUES (null,'Esporte');
+INSERT INTO TB_CATEGORIA  VALUES (null,'Balada/Boates');
+INSERT INTO TB_CATEGORIA  VALUES (null,'Anime');
+INSERT INTO TB_CATEGORIA  VALUES (null,'Turísmo');
+INSERT INTO TB_CATEGORIA  VALUES (null,'Literatura');
+INSERT INTO TB_CATEGORIA  VALUES (null,'Carros/Motos');
+INSERT INTO TB_CATEGORIA  VALUES (null,'Cinema');
+INSERT INTO TB_CATEGORIA  VALUES (null,'Infantil');
+INSERT INTO TB_CATEGORIA  VALUES (null,'Teatro');
+INSERT INTO TB_CATEGORIA  VALUES (null,'Palestra');
+INSERT INTO TB_CATEGORIA  VALUES (null,'Curso/Workshop');
+INSERT INTO TB_CATEGORIA  VALUES (null,'GLBT');
+INSERT INTO TB_CATEGORIA  VALUES (null,'Cultura Estrangeira');
+INSERT INTO TB_CATEGORIA  VALUES (null,'FlashMobs');
+INSERT INTO TB_CATEGORIA  VALUES (null,'Arte');
+INSERT INTO TB_CATEGORIA  VALUES (null,'Religião');
+
+/* Popular perfis de conta*/
+
+INSERT INTO TB_PERFIL  VALUES (null,'USUARIO');
+INSERT INTO TB_PERFIL  VALUES (null,'ADMINISTRADOR');
+

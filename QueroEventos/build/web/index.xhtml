@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.prime.com.tr/ui"     
+      xmlns:h="http://java.sun.com/jsf/html"
+      
+      xmlns:f="http://java.sun.com/jsf/core">
+    
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view contentType="text/html">
+            
+            <h:form>
+                <p:themeSwitcher initialText="Change Skin" buttonPreText="Skin: " theme="Start" >
+                   
+                </p:themeSwitcher> 
+            
+            
+            <p:panel header="Dados Conta">
+                <h:panelGrid columns="2">
+                    <h:outputText value="Login: " />
+                    <p:inputText value="#{EstadoView.conta.login}" maxlength="20"/>
+                    
+                    <h:outputText value="Senha:"/>
+                    <p:password value="#{EstadoView.conta.senha}" promptLabel="Digite a senha" feedback="true" minLength="6" maxlength="20" strongLabel="Forte" weakLabel="Fraco" goodLabel="Bom"/>
+                </h:panelGrid>
+            </p:panel>
+            
+            <p:panel header="Dados Usuario">
+                <h:panelGrid columns="2">
+                    <h:outputText value="Nome:"/>
+                    <p:inputText maxlength="50" value="#{EstadoView.conta.usuario.nome}"/>
+                    
+                    <h:outputText value="Email:"/>
+                    <p:inputText maxlength="30" value="#{EstadoView.conta.usuario.email}"/>
+                    
+                    <h:outputText value="Página Web:"/>
+                    <p:inputText maxlength="50" value="#{EstadoView.conta.usuario.webpage}"/>
+                    
+                    <h:outputText value="Estado:"/>
+                        <h:selectOneMenu value="#{EstadoView.estadoUf}" id="chkEstado" >    
+                        <f:selectItem itemLabel="Selecione" itemValue="null"/>
+                        <f:selectItems value="#{EstadoView.estadoList}" var="e" itemLabel="#{e.nome}" itemValue="#{e.uf}"/>  
+                        <f:ajax event="change" listener="#{EstadoView.AtualizarCidadeEstado}" render="chkCidade"/>
+                    </h:selectOneMenu>
+                    
+                    <h:outputText value="Cidade:"/>
+                    <h:selectOneMenu value="#{EstadoView.cidadeId}" id="chkCidade">
+                        <f:selectItem itemLabel="Selecione" itemValue="null"/>
+                        <f:selectItems value="#{EstadoView.cidadeList}" var="c" itemValue="#{c.id}" itemLabel="#{c.nome}"/>
+                    </h:selectOneMenu>     
+                    
+                    <h:outputText value="Sexo:"/>
+                    <h:selectOneRadio value="#{EstadoView.conta.usuario.sexo}" >
+                        <f:selectItem itemValue="M" itemLabel="Masculino"/>
+                        <f:selectItem itemValue="F" itemLabel="Feminino"/>
+                    </h:selectOneRadio>
+                        
+                    <h:outputText value="Data de Nascimento:"/>
+                    <p:calendar value="#{EstadoView.conta.usuario.dataNascimento}" yearRange="1950:2010" navigator="true" locale="pt_Br" />  
+                    
+                    <h:outputText value="Integração com Twitter:"/>
+                    <h:selectBooleanCheckbox value="#{EstadoView.conta.usuario.flgTwitter}"/>
+                    
+                    <h:outputText value="Integração com FaceBook:"/>
+                    <h:selectBooleanCheckbox value="#{EstadoView.conta.usuario.flgFacebook}"/>
+                    
+                    
+                             
+                </h:panelGrid>
+            </p:panel>
+            
+                <h:commandButton action="#{EstadoView.salvar()}" label="Salvar"/>
+            </h:form>
+            
+         
+            </f:view>
+        
+        
+        
+       
+        
+    </h:body>
+</html>
+
